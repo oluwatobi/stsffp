@@ -9,6 +9,7 @@ void function(int a, int b, int c) {
   char buffer1[5];
   char buffer2[10];
   int *ret;
+  
   ret = buffer1 + 12;
   (*ret) += 8;
 }
