@@ -11,6 +11,8 @@ void function(int a, int b, int c) {
   char buffer1[5];
   char buffer2[10];
   int *ret = buffer1 + 24;
+  //int *ret;
+  //ret = (int *) &ret + 4;
   (*ret) += 7;
 }
 
