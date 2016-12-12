@@ -17,11 +17,12 @@ void function(char *str) {
 }
 
 int main() {
-  char large_string[256];
+  char large_string[128];
   int i;
-  for (i = 0; i < 255; i++) {
+  for (i = 0; i < 127; i++) {
     large_string[i] = 'A';
   }
+  large_string[17] = '\0';
 
   function(large_string);
 }

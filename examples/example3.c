@@ -10,17 +10,35 @@
 void function(int a, int b, int c) {
   char buffer1[5];
   char buffer2[10];
-  int *ret = buffer1 + 24;
+  char *ret = buffer1 + 24;
   //int *ret;
   //ret = (int *) &ret + 4;
-  (*ret) += 7;
+  *ret += 35;
 }
 
 int main() {
   int x;
   
   x = 0;
-  function(1, 2, 3);
+  function(1, 89, 12);
   x = 1;
-  printf("%d\n", x);
+  goto foo;
+
+ bar2:
+  x = 2;
+  goto foo;
+
+ bar3:
+  x = 3;
+  goto foo;
+
+ foo:
+  printf("%d kjsdf;ak\n", x);
+
+  if (x < 0) {
+    goto bar2;
+  } else {
+    goto bar3;
+  }
+
 }
