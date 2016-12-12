@@ -7,20 +7,21 @@
 
 #include <stdio.h>
 
-void function(int a, int b, int c) {
+void overflow(int a, int b, int c) {
   char buffer1[5];
   char buffer2[10];
   char *ret = buffer1 + 24;
-  //int *ret;
-  //ret = (int *) &ret + 4;
   *ret += 35;
 }
 
 int main() {
   int x;
-  
+
   x = 0;
-  function(1, 89, 12);
+  overflow(1, 89, 12);
+  
+  // The remainder of the main function is to practice
+  // skipping around after returning from the "function"
   x = 1;
   goto foo;
 
@@ -34,11 +35,11 @@ int main() {
 
  foo:
   printf("%d kjsdf;ak\n", x);
-
-  if (x < 0) {
+  
+  if (x <= 1) {
     goto bar2;
-  } else {
+  }
+  if (x <= 2){
     goto bar3;
   }
-
 }
